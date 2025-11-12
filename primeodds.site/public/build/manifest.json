@@ -1,0 +1,26 @@
+{
+  "public/assets/images/pix.png": {
+    "file": "assets/pix-543a8cab.png",
+    "src": "public/assets/images/pix.png"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-5431b949.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "assets": [
+      "assets/pix-543a8cab.png"
+    ],
+    "css": [
+      "assets/app-5431b949.css"
+    ],
+    "file": "assets/app-d894644b.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
