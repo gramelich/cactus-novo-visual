@@ -3,7 +3,7 @@
     <head>
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="application-name" content="Nome do chicobets.site Site">
+        <meta name="application-name" content="{{ env('APP_NAME') }}">
         <link rel="icon" type="image/png" sizes="192x192" href="/img/icon.png"> <!-- ícone para Android -->
         <link rel="apple-touch-icon" href="/img/icon.png"> <!-- ícone para iOS -->
         <meta charset="UTF-8">
@@ -695,6 +695,51 @@ document.addEventListener("DOMContentLoaded", function() {
         @endif
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <style>
+            /* Custom Premium Styles */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #0f172a; 
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #3b82f6; 
+                border-radius: 4px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #2563eb; 
+            }
+
+            .btn-primary, button[type="submit"], .btn-action {
+                background: linear-gradient(45deg, #3b82f6, #8b5cf6) !important;
+                border: none !important;
+                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
+            .btn-primary:hover, button[type="submit"]:hover, .btn-action:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+            }
+
+            .card, .game-card {
+                background: rgba(30, 41, 59, 0.7) !important;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+            }
+            .card:hover, .game-card:hover {
+                border-color: #3b82f6;
+                box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+                transform: translateY(-5px);
+            }
+            
+            body {
+                background-color: #0f172a !important; /* Dark Slate */
+                color: #f1f5f9 !important;
+            }
+        </style>
     </head>
     <body color-theme="dark" class="bg-base text-gray-800 dark:text-gray-300 ">
         <div id="viperpro"></div>
