@@ -10,9 +10,11 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     libicu-dev \
     zip \
-    unzip \
-    nodejs \
-    npm
+    unzip
+
+# Install Node.js 20.x
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -33,8 +35,8 @@ COPY . /var/www
 # Install PHP dependencies
 RUN composer install --no-interaction --optimize-autoloader --no-dev
 
-# Install Node.js dependencies and build assets
-RUN npm install && npm run build
+# Install Node.js dependencies (build will be done after container starts)
+RUN npm install
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www \
